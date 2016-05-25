@@ -14,14 +14,15 @@ required:
 -  GCC (G++) or Clang
 -  Python 2.7+ (3.0 is untested as of now)
 -  SCons build system
--  X11 and Mesa development libraries
--  Xinerama libraries
+-  pkg-config (used to detect the dependencies below)
+-  X11 development libraries
+-  Xcursor and Xinerama development libraries
+-  MesaGL development libraries
 -  ALSA development libraries
 -  PulseAudio development libraries (for sound support)
 -  Freetype (for the editor)
 -  OpenSSL (for HTTPS and TLS)
 -  libudev-dev (optional, for gamepad support)
--  pkg-config (used to detect the above dependencies)
 
 Distro-specific oneliners
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -29,14 +30,23 @@ Distro-specific oneliners
 +---------------+------------------------------------------------------------------------------------------------------------+
 | Fedora        | ::                                                                                                         |
 |               |                                                                                                            |
-|               |     sudo dnf install scons pkgconfig libX11-devel libXcursor-devel alsa-lib-devel pulseaudio-libs-devel \  |
-|               |     freetype-devel mesa-libGL-devel openssl-devel libXinerama-devel libudev-devel``                        |
+|               |     sudo dnf install scons pkgconfig libX11-devel libXcursor-devel libXinerama-devel \                     |
+|               |     mesa-libGL-devel alsa-lib-devel pulseaudio-libs-devel freetype-devel openssl-devel libudev-devel       |
 +---------------+------------------------------------------------------------------------------------------------------------+
-| Mageia        | ``urpmi scons pkgconfig "pkgconfig(alsa) pkgconfig(freetype2) pkgconfig(gl) pkgconfig(libpulse)"           |
-|               | "pkgconfig(openssl) pkgconfig(udev) pkgconfig(x11) pkgconfig(xcursor) pkgconfig(xinerama)"``               |
+| FreeBSD       | ::                                                                                                         |
+|               |                                                                                                            |
+|               |     sudo pkg install scons pkg-config xorg-libraries libXcursor xineramaproto libglapi libGLU \            |
+|               |     freetype2 openssl                                                                                      |
 +---------------+------------------------------------------------------------------------------------------------------------+
-| Ubuntu        | ``sudo apt-get install scons pkg-config libx11-dev libxcursor-dev build-essential libasound2-dev           |
-|               | libpulse-dev libfreetype6-dev libgl1-mesa-dev libglu-dev libssl-dev libxinerama-dev libudev-dev``          | 
+| Mageia        | ::                                                                                                         |
+|               |                                                                                                            |
+|               |     urpmi scons pkgconfig "pkgconfig(alsa) pkgconfig(freetype2) pkgconfig(glu) pkgconfig(libpulse)" \      |
+|               |     "pkgconfig(openssl) pkgconfig(udev) pkgconfig(x11) pkgconfig(xcursor) pkgconfig(xinerama)"             |
++---------------+------------------------------------------------------------------------------------------------------------+
+| Ubuntu        | ::                                                                                                         |
+|               |                                                                                                            |
+|               |     sudo apt-get install build-essential scons pkg-config libx11-dev libxcursor-dev libxinerama-dev \      |
+|               |     libgl1-mesa-dev libglu-dev libasound2-dev libpulse-dev libfreetype6-dev libssl-dev libudev-dev         | 
 +---------------+------------------------------------------------------------------------------------------------------------+
 
 Compiling
