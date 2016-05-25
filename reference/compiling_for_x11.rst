@@ -33,8 +33,8 @@ Distro-specific oneliners
 | Mageia        | ``urpmi scons pkgconfig "pkgconfig(alsa) pkgconfig(freetype2) pkgconfig(gl) pkgconfig(libpulse)" \       |
 |               | "pkgconfig(openssl) pkgconfig(udev) pkgconfig(x11) pkgconfig(xcursor) pkgconfig(xinerama)"``             |
 +---------------+----------------------------------------------------------------------------------------------------------+
-| Ubuntu        | ``sudo apt-get install scons pkg-config libx11-dev libxcursor-dev build-essential libasound2-dev  \      |
-|               |     libpulse-dev libfreetype6-dev libgl1-mesa-dev libglu-dev libssl-dev libxinerama-dev libudev-dev``    | 
+| Ubuntu        | ``sudo apt-get install scons pkg-config libx11-dev libxcursor-dev build-essential libasound2-dev \       |
+|               | libpulse-dev libfreetype6-dev libgl1-mesa-dev libglu-dev libssl-dev libxinerama-dev libudev-dev``        | 
 +---------------+----------------------------------------------------------------------------------------------------------+
 
 Compiling
